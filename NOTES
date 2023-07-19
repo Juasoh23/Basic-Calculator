@@ -1,0 +1,35 @@
+include <stdio.h>
+#include <stdlib.h>
+#include<stdbool.h>
+
+
+
+/*
+format specifier for int is %d
+format specifier for double is %lf
+format specifier for float is %f
+format specifier for char is %c
+format specifier for bool is %d
+&& means setting 2 conditions for a function
+== means setting something equal to another thing
+++ means adding 1 to another thing
+while function is a loop
+
+*/
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_STUDENTS 5
+#define MAX_NAME_LENGTH 50
+#define MAX_MAJOR_LENGTH 50
+
+
+#include <stdio.h>
+
+int main() {
+  
+  
+  
+    return 0;
+}
