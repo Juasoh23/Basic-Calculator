@@ -1,0 +1,79 @@
+
+/*
+format specifier for int is %d
+format specifier for double is %lf
+format specifier for float is %f
+format specifier for char is %c
+format specifier for bool is %d
+&& means setting 2 conditions for a function
+== means setting something equal to another thing
+++ means adding 1 to another thing
+while function is a loop
+
+*/
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_STUDENTS 5
+#define MAX_NAME_LENGTH 50
+#define MAX_MAJOR_LENGTH 50
+
+struct Student {
+    char name[MAX_NAME_LENGTH];
+    float gpa;
+    char major[MAX_MAJOR_LENGTH];
+    int age;
+};
+
+int main() {
+    struct Student students[MAX_STUDENTS];
+    int numStudents = 0;
+    char searchName[MAX_NAME_LENGTH];
+    int i, found = 0;
+
+    printf("Welcome to the Student Database!\n");
+
+    // Collect student information
+    for (i = 0; i < MAX_STUDENTS; i++) {
+        printf("\nStudent %d:\n", i + 1);
+        printf("Enter name: ");
+        scanf("%s", students[i].name);
+        printf("Enter GPA: ");
+        scanf("%f", &students[i].gpa);
+        printf("Enter major: ");
+        scanf("%s", students[i].major);
+        printf("Enter age: ");
+        scanf("%d", &students[i].age);
+        numStudents++;
+
+        char choice;
+        printf("\nDo you want to enter data for another student? (y/n): ");
+        scanf(" %c", &choice);
+        if (choice != 'y' && choice != 'Y') {
+            break;
+        }
+    }
+
+    // Search for a student by name
+    printf("\nEnter the name of the student to search for: ");
+    scanf("%s", searchName);
+
+    for (i = 0; i < numStudents; i++) {
+        if (strcmp(students[i].name, searchName) == 0) {
+            printf("\nStudent found!\n");
+            printf("Name: %s\n", students[i].name);
+            printf("GPA: %.2f\n", students[i].gpa);
+            printf("Major: %s\n", students[i].major);
+            printf("Age: %d\n", students[i].age);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("\nStudent not found.\n");
+    }
+
+    return 0;
+}
